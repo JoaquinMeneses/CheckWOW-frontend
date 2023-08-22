@@ -18,9 +18,6 @@ const Home = () => {
             Entrar
           </Button>
         </Link>
-        <Link href="/register">
-          <Button variant="shadow">Registrarse</Button>
-        </Link>
       </div>
     </div>
   );

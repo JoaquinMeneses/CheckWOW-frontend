@@ -1,6 +1,4 @@
 "use client";
-
-import Buttons from "@/components/ButtonsMenu";
 import ButtonTable from "@/components/ButtonTable";
 
 import {
@@ -16,43 +14,14 @@ import {
 const rows = [
   {
     key: "1",
-    account: "Tony Reichert",
-    main: "CEO",
-    alters: "Active",
-    puntos: 1,
-    acciones: <ButtonTable />,
-  },
-  {
-    key: "2",
-    account: "Zoey Lang",
-    main: "Technical Lead",
-    alters: "Paused",
-    puntos: 5,
-    acciones: <ButtonTable />,
-  },
-  {
-    key: "3",
-    account: "Jane Fisher",
-    main: "Senior Developer",
-    alters: "Active",
-    puntos: 100,
-    acciones: <ButtonTable />,
-  },
-  {
-    key: "4",
-    account: "William Howard",
-    main: "Community Manager",
-    alters: ["Vacation"],
-    puntos: 15,
+    main: "Panaderito",
+    alters: ["Panpija", "Panchota"],
+    puntos: 10,
     acciones: <ButtonTable />,
   },
 ];
 
 const columns = [
-  {
-    key: "account",
-    label: "CUENTA",
-  },
   {
     key: "main",
     label: "MAIN",
@@ -84,7 +53,11 @@ const Dashboard = () => {
           {(item) => (
             <TableRow key={item.key}>
               {(columnKey) => (
-                <TableCell>{getKeyValue(item, columnKey)}</TableCell>
+                <TableCell>
+                  {columnKey === "alters"
+                    ? item.alters.join(", ")
+                    : getKeyValue(item, columnKey)}
+                </TableCell>
               )}
             </TableRow>
           )}

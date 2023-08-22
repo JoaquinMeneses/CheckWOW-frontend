@@ -59,12 +59,6 @@ const Login = () => {
                 Iniciar sesión
               </button>
             </div>
-            <span className="flex items-center justify-center gap-2 text-white">
-              ¿No tienes cuenta?
-              <Link href="/register">
-                <p className="text-blue-500">Registrarse</p>
-              </Link>
-            </span>
           </form>
         </div>
       </div>
