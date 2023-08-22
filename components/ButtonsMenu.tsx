@@ -2,11 +2,15 @@ import { Button, ButtonGroup, Tooltip } from "@nextui-org/react";
 import DeleteAccount from "@/components/DeleteAccount";
 import ModifyAccount from "@/components/ModifyAccount";
 
-const ButtonsMenu = () => {
+interface ButtonsMenuProps {
+  id: number;
+}
+
+const ButtonsMenu = ({ id }: ButtonsMenuProps) => {
+  console.log(id);
   return (
-    <div className="flex justify-center gap-4 mb-4">
+    <div className="flex justify-center gap-4">
       <div className="flex flex-col items-center">
-        <p>Asistencia</p>
         <ButtonGroup>
           <Tooltip
             key="success"
@@ -45,7 +49,6 @@ const ButtonsMenu = () => {
         </ButtonGroup>
       </div>
       <div className="flex flex-col items-center">
-        <p>Cuenta</p>
         <ButtonGroup>
           <ModifyAccount />
           <DeleteAccount />

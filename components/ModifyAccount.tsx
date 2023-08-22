@@ -1,4 +1,3 @@
-import ButtonsMenu from "./ButtonsMenu";
 import {
   Modal,
   ModalContent,
@@ -39,10 +38,10 @@ export default function App() {
           {(onClose) => (
             <>
               <ModalHeader className="flex flex-col gap-1">
-                Gestionar cuenta
+                Editar cuenta
               </ModalHeader>
               <ModalBody>
-                <ButtonsMenu />
+                Test
               </ModalBody>
             </>
           )}
