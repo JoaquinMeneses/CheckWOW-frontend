@@ -10,7 +10,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [token, setToken] = useState(true);
+  const [token, setToken] = useState(false);
 
   return (
     <html lang="en" className="dark">
