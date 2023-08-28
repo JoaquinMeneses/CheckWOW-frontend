@@ -12,7 +12,8 @@ const Page = () => {
   }, []);
 
   const loadAccounts = () => {
-    axios("http://localhost:8000/accounts/all")
+    axios
+      .get("http://localhost:8000/accounts/all")
       .then((res) => {
         /* console.log(res.data.accounts); */
         setData(res.data.accounts);
@@ -25,7 +26,8 @@ const Page = () => {
   };
 
   const handleAddPoints = (id) => {
-    axios("http://localhost:8000/accounts/add")
+    axios
+      .post("http://localhost:8000/accounts/add", { _id: id })
       .then(() => {
         console.log(id);
         loadAccounts();
@@ -36,7 +38,8 @@ const Page = () => {
   };
 
   const handleSubPoints = (id) => {
-    axios("http://localhost:8000/accounts/sub")
+    axios
+      .post("http://localhost:8000/accounts/sub", { _id: id })
       .then(() => {
         console.log(id);
         loadAccounts();
@@ -61,8 +64,8 @@ const Page = () => {
         </tr>
       </thead>
       <tbody>
-        {data.map((item, index) => (
-          <tr key={index}>
+        {data.map((item) => (
+          <tr key={item._id}>
             <td>{item.main}</td>
             <td>{item.alters.join(", ")}</td>
             <td>{item.puntos}</td>
